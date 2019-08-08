@@ -1,14 +1,20 @@
 package com.example.databindingintroduction;
 
-public class Student {
-    private String name;
-    private int age;
-   private   String country;
+import android.databinding.BindingAdapter;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
+import android.widget.ImageView;
 
-    public Student(String name,int age, String country){
+public class Student {
+    private String name, standard,bloodGroup;
+    private int age, photo;
+
+    public Student(String name,int age, String standard, String bloodGroup, int photo){
         this.name = name;
         this.age = age;
-        this.country = country;
+        this.standard = standard;
+        this.bloodGroup = bloodGroup;
+        this.photo = photo;
     }
 
     public String getName() {
@@ -19,7 +25,20 @@ public class Student {
         return age;
     }
 
-    public String getCountry() {
-        return country;
+    public String getStandard() {
+        return standard;
+    }
+
+    public String getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public int getPhoto() {
+        return photo;
+    }
+
+    @BindingAdapter("android:loadImage")
+    public static void loadImage(ImageView view, int image){
+        view.setImageResource(image);
     }
 }

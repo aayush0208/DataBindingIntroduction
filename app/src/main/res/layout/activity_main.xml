@@ -13,6 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:loadImage="@{student.photo}"
+            android:layout_centerHorizontal="true"/>
+
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
@@ -21,14 +29,15 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:text="@{student.name}"
+            android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"/>
+            android:layout_below="@id/photo"/>
 
         <TextView
             android:id="@+id/age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="age"
+            android:hint="Age"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:text="@{String.valueOf(student.age)}"
@@ -37,14 +46,28 @@
             android:layout_marginTop="15dp"/>
 
         <TextView
-            android:id="@+id/country"
+            android:id="@+id/standard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="country"
-            android:text="@{student.country }"
+            android:layout_below="@id/age"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:hint="Standard"
+            android:text="@{student.standard }"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/blood_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Blood Group"
+            android:text="@{student.bloodGroup }"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:layout_below="@id/age"
+            android:textAlignment="center"
+            android:layout_below="@id/standard"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"/>
 
@@ -52,7 +75,9 @@
             android:id="@+id/showDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+           android:layout_below="@id/blood_group"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
             android:textAllCaps="false"
             android:text="Show Details"/>
     </RelativeLayout>

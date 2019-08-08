@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         binding.showDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Student student = new Student("John",17,"England");
+                Student student = new Student("Aayush",12,"6th","B+",R.drawable.fido);
                 binding.setStudent(student);
             }
         });
